@@ -7,7 +7,7 @@
     <title>Login Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
-</head> 
+</head>
 
 <body>
     <div class="cursor"></div>
@@ -23,11 +23,11 @@
                 </div>
 
                 <span>or use your email for registration</span>
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                
-            <button>Sign Up</button>
+                <input type="text" placeholder="Name" id="name">
+                <input type="email" placeholder="Email" id="email">
+                <input type="password" placeholder="Password" id="pass">
+
+                <button id="mainRegisterData">Sign Up</button>
             </form>
         </div>
 
@@ -45,30 +45,33 @@
                 <input type="email" placeholder="Email">
                 <input type="password" placeholder="Password">
                 <a class="forget" href="#">Forget your password ? (bhulakkad)</a>
-            <button>Sign In</button>
+                <button id="mainLoginData">Sign In</button>
             </form>
-            </div>
-            <!-- for toggle -->
-            <div class="toggle-container">
-                <div class="toggle">
-                    <div class="toggle-panel toggle-left">
-                        <h1>Welcome Back! to Encord</h1>
-                        <p>Enter your personal details to use all features of this website.</p>
-                        <button class="hidden" id="login">
-                            Sign In
-                        </button>
-                    </div>
+        </div>
+        <!-- for toggle -->
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back! to Encord</h1>
+                    <p>Enter your personal details to use all features of this website.</p>
+                    <button class="hidden" id="login">
+                        Sign In+
+                    </button>
+                </div>
 
-                    <div class="toggle-panel toggle-right">
-                        <h1>Hello, Dost!</h1>
-                        <p>Register with your personal details to use all features of this website.</p>
-                        <button class="hidden" id="register">
-                            Sign Up
-                        </button>
-                    </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, Dost!</h1>
+                    <p>Register with your personal details to use all features of this website.</p>
+                    <button class="hidden" id="register">
+                        Sign Up
+                    </button>
                 </div>
             </div>
+        </div>
     </div>
     <script src="./script.js"></script>
+
+    <script src="./server.js"></script>
 </body>
+
 </html>
