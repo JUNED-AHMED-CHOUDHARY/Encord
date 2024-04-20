@@ -6,31 +6,22 @@ const passwordVal = document.querySelector("#pass");
 
 mainRegisterData.addEventListener("click", async (e) => {
   e.preventDefault();
-  console.log("bhai bhai");
+  console.log("Register button clicked");
+
   try {
-    const response = await fetch(`/api/v1/tasks/register`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: nameVal,
-        email: emailVal,
-        password: passwordVal,
-      }),
+    const response = await axios.post("/api/v1/tasks/register", {
+      name: nameVal.value,
+      email: emailVal.value,
+      password: passwordVal.value,
     });
 
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-
-    const data = await response.json();
-    console.log(data);
-  } catch (e) {
-    console.log("Something in Register", e);
+    console.log(response.data);
+  } catch (error) {
+    console.error("Error in Register", error);
   }
 });
+
 mainLoginData.addEventListener("click", (e) => {
   e.preventDefault();
-  console.log("bhaiasefef bhai");
+  console.log("Login button clicked");
 });
