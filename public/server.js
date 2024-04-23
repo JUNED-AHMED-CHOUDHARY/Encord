@@ -14,14 +14,25 @@ mainRegisterData.addEventListener("click", async (e) => {
       email: emailVal.value,
       password: passwordVal.value,
     });
-
-    console.log(response.data);
   } catch (error) {
     console.error("Error in Register", error);
   }
 });
 
-mainLoginData.addEventListener("click", (e) => {
+mainLoginData.addEventListener("click", async (e) => {
   e.preventDefault();
   console.log("Login button clicked");
+  try {
+    const response = await axios.post("/api/v1/tasks/login", {
+      email: emailVal.value,
+      password: passwordVal.value,
+    });
+    const ans = response.data.email;
+    localStorage.setItem("token", response.data.token);
+    localStorage.setItem("email", ans);
+    console.log(ans);
+    console.log("LoggedIn Successfully");
+  } catch (error) {
+    console.error("Error in login", error);
+  }
 });

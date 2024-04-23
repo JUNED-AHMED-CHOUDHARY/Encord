@@ -42,7 +42,7 @@ const login = async (req, res) => {
     }
 
     const token = createJWT(user, user.name);
-    res.status(200).json({ user: { name: user.name }, token });
+    res.status(200).json({ user: { name: user.name }, token ,email});
   } catch (error) {
     console.error(error);
     res.status(500).json({ msg: "Internal Server Error" });
